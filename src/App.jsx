@@ -14,7 +14,7 @@ function App() {
   return (
     <AuthProvider>
       <Router>
-        <Route path="/Register" component={Register} />
+        <Route path="/" component={Register} />
         <Route path="/Login" component={Login} />
         <Route path="/Home" component={Home} />
         <Route path="/Recepti" component={Recepti} />

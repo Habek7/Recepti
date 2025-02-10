@@ -18,13 +18,17 @@ export default function Recepti() {
         const name = formData.get("naziv");
         const description = formData.get("opis");
         const author_id = session().user.id;
+        const sastojci = formData.get("sastojci");
+        const ime_i_prezime = formData.get("ime i prezime");
 
         const { error } = await supabase
             .from("recepti")
             .insert({
                 naziv: name,
                 opis: description,
-                author_id: author_id
+                author_id: author_id,
+                sastojci: sastojci,
+                ime_i_prezime: ime_i_prezime
             });
 
         if (error) {
@@ -54,11 +58,29 @@ export default function Recepti() {
                             />
                         </div>
                         <div class="flex flex-col mb-6">
+                            <label class="text-lg text-gray-700">Sastojci:</label>
+                            <textarea
+                                name="sastojci"
+                                required
+                                rows="3"
+                                class="border-2 border-gray-300 bg-gray-100 text-gray-700 p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                            ></textarea>
+                        </div>
+                        <div class="flex flex-col mb-6">
                             <label class="text-lg text-gray-700">Upute za pripremu:</label>
                             <textarea
                                 name="opis"
                                 required
                                 rows="4"
+                                class="border-2 border-gray-300 bg-gray-100 text-gray-700 p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                            ></textarea>
+                        </div>
+                        <div class="flex flex-col mb-6">
+                            <label class="text-lg text-gray-700">Ime i prezime</label>
+                            <textarea
+                                name="ime i prezime"
+                                required
+                                rows="1"
                                 class="border-2 border-gray-300 bg-gray-100 text-gray-700 p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
                             ></textarea>
                         </div>

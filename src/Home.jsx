@@ -31,7 +31,7 @@ export default function Home(props) {
                             </a>
                             <a href="/Recepti">
                                 <button className="bg-yellow-500 text-white py-3 rounded-lg w-full hover:bg-yellow-600 transition duration-300">
-                                    ❤️ Omiljeni Recepti
+                                    🍲  Dodaj recept
                                 </button>
                             </a>
                         </div>
