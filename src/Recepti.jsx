@@ -45,8 +45,6 @@ export default function Recepti() {
             <div class="min-h-screen flex items-center justify-center bg-orange-100">
                 <div class="p-8 bg-white rounded-2xl shadow-lg max-w-md w-full">
                     <h2 class="text-3xl font-semibold text-center text-orange-700 mb-6">Dodaj novi recept</h2>
-
-                    {/* Forma za dodavanje novog recepta */}
                     <form onSubmit={formSubmit}>
                         <div class="flex flex-col mb-4">
                             <label class="text-lg text-gray-700">Naziv recepta:</label>

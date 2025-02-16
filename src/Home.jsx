@@ -24,9 +24,9 @@ export default function Home(props) {
                     <div>
                         <p class="text-lg text-gray-700 mb-6">Dobrodošli, <span class="font-bold">{session().user.email}</span>!</p>
                         <div class="grid grid-cols-2 gap-4">
-                            <a href="/Pretrazivanje">
-                                <button className="bg-blue-500 text-white py-3 rounded-lg w-full hover:bg-blue-600 transition duration-300">
-                                    🔍 Pretraži Recepte
+                            <a href="/Omiljeni">
+                                <button className="bg-yellow-500 text-white py-3 rounded-lg w-full hover:bg-yellow-600 transition duration-300">
+                                    ❤  Omiljeni recepti 
                                 </button>
                             </a>
                             <a href="/Recepti">
@@ -35,6 +35,12 @@ export default function Home(props) {
                                 </button>
                             </a>
                         </div>
+                        <br></br> 
+                            <a href="/Pretrazivanje">
+                                <button className="bg-blue-500 text-white py-3 rounded-lg w-full hover:bg-blue-600 transition duration-300">
+                                    🔍 Pretraži Recepte
+                                </button>
+                            </a>
                         <button
                             onClick={handleSignOutClick}
                             class="bg-red-500 text-white py-3 rounded-lg w-full hover:bg-red-600 transition duration-300 mt-6">

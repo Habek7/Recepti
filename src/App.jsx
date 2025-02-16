@@ -7,6 +7,7 @@ import Login from "./Login";
 import Home from "./Home";
 import Recepti from "./Recepti";
 import Pretrazivanje from "./Pretrazivanje";
+import Omiljeni from "./Omiljeni";
 
 
 function App() {
@@ -19,6 +20,8 @@ function App() {
         <Route path="/Home" component={Home} />
         <Route path="/Recepti" component={Recepti} />
         <Route path="/Pretrazivanje" component={Pretrazivanje} />
+        <Route path="/Omiljeni" component={Omiljeni} />
+
       </Router>
     </AuthProvider>
 
