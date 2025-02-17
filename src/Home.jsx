@@ -26,7 +26,7 @@ export default function Home(props) {
                         <div class="grid grid-cols-2 gap-4">
                             <a href="/Omiljeni">
                                 <button className="bg-yellow-500 text-white py-3 rounded-lg w-full hover:bg-yellow-600 transition duration-300">
-                                    ❤  Omiljeni recepti 
+                                    ❤️  Omiljeni recepti 
                                 </button>
                             </a>
                             <a href="/Recepti">

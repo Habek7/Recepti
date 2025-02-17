@@ -8,7 +8,6 @@ export default function Recepti() {
 
     const [success, setSuccess] = createSignal(false);
 
-    // Funkcija za dodavanje novog recepta
     async function formSubmit(event) {
         setSuccess(false);
 
@@ -51,6 +50,7 @@ export default function Recepti() {
                             <input
                                 name="naziv"
                                 type="text"
+                                autocomplete="false"
                                 required
                                 class="border-2 border-gray-300 bg-gray-100 text-gray-700 p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
                             />
