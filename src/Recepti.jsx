@@ -4,7 +4,7 @@ import { supabase } from "./supabase";
 
 export default function Recepti() {
     const session = useAuth();
-    console.log(session())
+    console.log(session());
 
     const [success, setSuccess] = createSignal(false);
 
@@ -19,6 +19,7 @@ export default function Recepti() {
         const author_id = session().user.id;
         const sastojci = formData.get("sastojci");
         const ime_i_prezime = formData.get("ime i prezime");
+        const kategorija = formData.get("kategorija"); 
 
         const { error } = await supabase
             .from("recepti")
@@ -27,7 +28,8 @@ export default function Recepti() {
                 opis: description,
                 author_id: author_id,
                 sastojci: sastojci,
-                ime_i_prezime: ime_i_prezime
+                ime_i_prezime: ime_i_prezime,
+                kategorija: kategorija, 
             });
 
         if (error) {
@@ -74,14 +76,27 @@ export default function Recepti() {
                             ></textarea>
                         </div>
                         <div class="flex flex-col mb-6">
-                            <label class="text-lg text-gray-700">Ime i prezime</label>
-                            <textarea
+                            <label class="text-lg text-gray-700">Ime i prezime:</label>
+                            <input
                                 name="ime i prezime"
                                 required
-                                rows="1"
                                 class="border-2 border-gray-300 bg-gray-100 text-gray-700 p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
-                            ></textarea>
+                            />
                         </div>
+
+                        <div class="flex flex-col mb-6">
+                            <label class="text-lg text-gray-700">Kategorija:</label>
+                            <select
+                                name="kategorija"
+                                required
+                                class="border-2 border-gray-300 bg-gray-100 text-gray-700 p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                            >
+                                <option value="Doručak">Doručak</option>
+                                <option value="Ručak">Ručak</option>
+                                <option value="Večera">Večera</option>
+                            </select>
+                        </div>
+
                         <div class="flex justify-center mb-4">
                             <input
                                 type="submit"
